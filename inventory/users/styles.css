@@ -1,0 +1,114 @@
+/* Reset & General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Content Section */
+.content {
+    margin-left: 250px; /* Ensure it starts after the sidebar */
+    padding: 20px;
+    flex-grow: 1;
+    background-color: #ffffff;
+    overflow-y: auto;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+/* Header */
+header.header {
+    background-color: #FFD369;
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Overview Section */
+section {
+    margin-top: 20px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    color: #222831;
+    margin-bottom: 15px;
+    font-size: 20px;
+    text-align: center;
+}
+
+/* Overview Boxes */
+.overview-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Centered layout */
+}
+
+/* Individual Overview Item */
+.overview-item {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Full width for small screens */
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.overview-item p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #2c3e50;
+}
+
+.overview-item strong {
+    color: #FFD369;
+}
+
+/* Responsive Overview Items */
+@media screen and (min-width: 600px) {
+    .overview-item {
+        width: calc(50% - 10px); /* 2 items per row */
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .overview-item {
+        width: calc(25% - 10px); /* 4 items per row */
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .content {
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .content {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 18px;
+    }
+
+    .overview-item {
+        width: 100%; /* Full width for small screens */
+    }
+
+    .overview-item p {
+        font-size: 14px;
+    }
+}

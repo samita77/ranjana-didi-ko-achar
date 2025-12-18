@@ -1,0 +1,253 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Changed from height to min-height */
+    background-color: #ffffff;
+    color: #222831;
+    padding: 15px; /* Added padding for mobile */
+}
+
+.container {
+    display: flex;
+    max-width: 1000px;
+    width: 100%;
+    padding: 40px;
+    gap: 40px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.left-section {
+    flex: 1;
+    padding: 20px;
+}
+
+.right-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-section img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.left-section .square {
+    height: 20px;
+    width: 20px;
+    background-color: #FF6884;
+}
+
+h1 {
+    font-size: 32px;
+    color: #222831;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.description {
+    color:#393E46;
+    margin-bottom: 30px;
+    line-height: 1.5; /* Added for better readability */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #222831;
+    font-size: 14px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #FFD369;
+}
+
+/* Style for the password visibility toggle icon */
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    bottom: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #222831;
+    transition: color 0.3s ease;
+}
+
+/* Change the icon color when hovered */
+.toggle-password:hover {
+    color: #FFD369;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #FFD369;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #faca59;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #222831;
+}
+
+.login-link a {
+    color: #FFD369;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
+    .container {
+        max-width: 90%;
+        padding: 30px;
+        gap: 30px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+        margin: 15px;
+    }
+
+    .right-section {
+        display: none; /* Hide illustration on mobile */
+    }
+
+    .left-section {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .description {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    input {
+        padding: 10px;
+    }
+
+    .btn {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 15px;
+        margin: 10px;
+    }
+
+    .left-section {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .description {
+        font-size: 0.85rem;
+    }
+
+    .form-group {
+        margin-bottom: 12px;
+    }
+
+    label {
+        font-size: 13px;
+    }
+
+    input {
+        font-size: 0.85rem;
+    }
+
+    .login-link {
+        font-size: 13px;
+    }
+}
+
+/* For very small screens */
+@media screen and (max-width: 320px) {
+    .container {
+        padding: 10px;
+        margin: 5px;
+    }
+
+    .left-section {
+        padding: 8px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .btn {
+        padding: 8px;
+        font-size: 13px;
+    }
+}

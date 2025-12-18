@@ -1,0 +1,141 @@
+/* Reset & General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Content Section */
+.content {
+    margin-left: 250px; /* Ensure it starts after the sidebar */
+    padding: 20px;
+    flex-grow: 1;
+    background-color: #ffffff;
+    overflow-y: auto;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+/* Header */
+header.header {
+    background-color: #FFD369;
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Overview Section */
+section {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 90%;
+}
+
+section h2 {
+    color: #222831;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+section div {
+    display: flex;
+    flex-direction: column;
+}
+
+section p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+/* Container for overview items */
+.overview-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+/* Individual overview item box */
+.overview-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 50%; /* Full width for small screens */
+    text-align: center;
+}
+
+.overview-item p {
+    margin: 0;
+    font-size: 16px;
+    color: #393E46;
+}
+
+.overview-item strong {
+    color: #FFD369; /* Blue color for labels */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .content {
+        margin-left: 0; /* Remove left margin on smaller screens */
+        padding: 15px;
+    }
+    
+    .overview-item {
+        width: 100%; /* Make items full-width */
+    }
+}
+
+@media (max-width: 768px) {
+    header.header {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 20px; /* Smaller font for mobile */
+    }
+
+    .content {
+        padding: 10px;
+    }
+
+    section {
+        padding: 15px;
+    }
+
+    .overview-box {
+        flex-direction: column; /* Stack items in one column */
+    }
+
+    .overview-item {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 18px;
+    }
+
+    section h2 {
+        font-size: 18px;
+    }
+
+    section p {
+        font-size: 14px;
+    }
+
+    .overview-item {
+        padding: 15px;
+    }
+}

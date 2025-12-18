@@ -1,0 +1,107 @@
+/* Reset & General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Header Styling */
+header {
+    background-color: #FFD369;
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Main Container */
+.container {
+    margin-left: 250px;
+    padding: 20px;
+    flex-grow: 1;
+    background-color: #ffffff;
+    overflow-y: auto; /* Enable vertical scrolling */
+    height: 80vh; /* Set a fixed height for the container */
+}
+
+/* Report Section */
+.report {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+}
+
+
+.report-box {
+    background-color: #ffffff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    width: 250px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.report-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.report-box h2 {
+    font-size: 18px;
+    color: #222831;
+    margin-bottom: 10px;
+}
+
+.report-box a {
+    display: block;
+    padding: 10px;
+    margin: 5px 0;
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.report-box a:first-of-type {
+    background-color: #007bff;
+}
+
+.report-box a:first-of-type:hover {
+    background-color: #0056b3;
+}
+
+.report-box a:last-of-type {
+    background-color: #dc3545;
+}
+
+.report-box a:last-of-type:hover {
+    background-color: #b22a36;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        margin-left: 0;
+        padding: 15px;
+    }
+
+    .report {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .report-box {
+        width: 100%;
+        max-width: 300px;
+    }
+}

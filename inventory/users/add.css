@@ -1,0 +1,154 @@
+/* Reset & General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* Header Styling */
+header {
+    background-color: #FFD369;
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Main Container */
+.container {
+    margin-left: 250px;
+    padding: 20px;
+    flex-grow: 1;
+    background-color: #ffffff;
+    overflow-y: auto;
+    height: 80vh; /* Fixed height */
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.container-box {
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Field Container */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 40px;
+    padding-left: 400px;
+}
+
+label {
+    font-size: 14px;
+    color: #222831;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+/* Input & Textarea Styling */
+input, textarea, select {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #FFD369;
+}
+
+/* Textarea */
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* File Upload */
+input[type="file"] {
+    border: none;
+    padding: 5px;
+}
+
+/* Submit Button */
+.class {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 40px;
+    padding-left: 400px;
+    margin-bottom: 20px;
+}
+
+img {
+    max-width: 100px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    background-color: #FFD369;
+    border: none;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    margin-bottom: 20px;
+}
+
+button:hover {
+    background-color: #faca59;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        margin-left: 0;
+        padding: 15px;
+        height: auto;
+    }
+
+    .content, .class {
+        padding-left: 0;
+        align-items: center;
+    }
+    
+    input, textarea, select, button {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        margin-left: 0;
+        padding: 15px;
+    }
+
+    .content, .class {
+        padding-left: 0;
+        align-items: center;
+    }
+
+    input, textarea, select, button {
+        max-width: 90%;
+    }
+}

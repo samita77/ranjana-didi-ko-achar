@@ -1,0 +1,182 @@
+/* Original CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #333;
+}
+
+/* Header Styling */
+header {
+    background-color: #FFD369;
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Main Container */
+.container {
+    margin-left: 250px;
+    padding: 20px;
+    flex-grow: 1;
+    background-color: #ffffff;
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+h1 {
+    text-align: center;
+    color: #ffffff;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+    border: 1px solid #eee;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #FFD369;
+    color: #ffffff;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #e6e6e6;
+}
+
+td img {
+    max-width: 100px;
+    border-radius: 5px;
+}
+
+/* Action Buttons */
+.action-btn-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.action-btn {
+    padding: 6px 12px;
+    border-radius: 4px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    text-align: center;
+    display: inline-block;
+}
+
+.edit-btn {
+    background-color: #007bff;
+    transition: background-color 0.3s ease;
+}
+
+.edit-btn:hover {
+    background-color: rgb(86, 161, 241);
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+    background-color: #b22a36;
+}
+
+/* Stock Level Indicators */
+.in-stock {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.low-stock {
+    color: #ff9800;
+    font-weight: bold;
+}
+
+.out-of-stock {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .container {
+        margin-left: 0;
+        width: 95%;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    th, td {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .action-btn-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .action-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        font-size: 18px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    .action-btn {
+        font-size: 12px;
+        padding: 6px;
+    }
+}

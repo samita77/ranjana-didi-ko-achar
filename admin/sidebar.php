@@ -13,19 +13,7 @@
                 </div>
             </a>
         </li>
-        <li class="dropdown">
-            <a href="#" onclick="toggleDropdown(event, 'users')">
-                <div class="menu-item">
-                    <i class="fas fa-users"></i>
-                    <span>Users</span>
-                </div>
-                <span class="caret-icon">▼</span>
-            </a>
-            <ul id="users" class="submenu">
-                <li><a href="view_users.php">View Users</a></li>
-                <li><a href="add_users.php">Add Users</a></li>
-            </ul>
-        </li>
+        
         <li>
             <a href="logout.php">
                 <div class="menu-item">
@@ -259,4 +247,3 @@ function toggleDropdown(event, menuId) {
     }
 }
 </style>
-

@@ -169,6 +169,9 @@ body {
 .store-card {
     position: relative;
 }
+.store-btn {
+    margin-top: 12px;
+}
 
 .badge {
     display: inline-flex;

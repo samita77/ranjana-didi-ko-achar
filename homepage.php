@@ -68,10 +68,10 @@ $_SESSION['csrf_token'] = $csrfToken;
         <div class="hero-content surface">
             <div class="pill">Cozy single-vendor storefront</div>
             <h2>Fresh achar, one vendor, one tidy inventory.</h2>
-            <p>Give Ranjana Didi ko Achar a beautiful, unified home. Manage stock, purchases, and sales from the same friendly dashboard—ready for MariaDB or SQLite.</p>
+            <p>Give Ranjana Didi ko Achar a welcoming home. Browse jars, tap WhatsApp to order, and manage stock from the same friendly dashboard.</p>
             <div class="cta-buttons">
                 <a href="login/login.php" class="btn">Get Started</a>
-                <a href="#store" class="btn btn-ghost">Browse Storefront</a>
+                <a href="https://wa.me/?text=Hi%20I%27d%20like%20to%20order%20from%20Ranjana%20Didi%20ko%20Achar" class="btn btn-ghost" target="_blank" rel="noopener">Order on WhatsApp</a>
             </div>
             <div class="stat-grid">
                 <div class="card stat-card">
@@ -112,6 +112,7 @@ $_SESSION['csrf_token'] = $csrfToken;
                     <span class="dot"></span>
                     <span>Ready to ship</span>
                 </div>
+                <a class="btn btn-ghost store-btn" href="https://wa.me/?text=Hi%2C%20I%20want%20to%20order%20Lapsi%20Achar" target="_blank" rel="noopener">Order on WhatsApp</a>
             </div>
             <div class="card store-card">
                 <div class="badge badge-accent">Signature</div>
@@ -122,6 +123,7 @@ $_SESSION['csrf_token'] = $csrfToken;
                     <span class="dot"></span>
                     <span>Single vendor</span>
                 </div>
+                <a class="btn btn-ghost store-btn" href="https://wa.me/?text=Hi%2C%20I%20want%20to%20order%20Titaura%20Mix" target="_blank" rel="noopener">Order on WhatsApp</a>
             </div>
             <div class="card store-card">
                 <div class="badge">Spicy</div>
@@ -132,6 +134,7 @@ $_SESSION['csrf_token'] = $csrfToken;
                     <span class="dot"></span>
                     <span>Low on waste</span>
                 </div>
+                <a class="btn btn-ghost store-btn" href="https://wa.me/?text=Hi%2C%20I%20want%20to%20order%20Chilli%20Garlic%20Achar" target="_blank" rel="noopener">Order on WhatsApp</a>
             </div>
         </div>
     </section>

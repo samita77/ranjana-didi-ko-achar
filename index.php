@@ -7,6 +7,7 @@ $_SESSION['csrf_token'] = $csrfToken;
 require __DIR__ . '/components/header.php';
 require __DIR__ . '/components/hero.php';
 require __DIR__ . '/components/store.php';
+require __DIR__ . '/components/order.php';
 require __DIR__ . '/components/inventory.php';
 require __DIR__ . '/components/features.php';
 require __DIR__ . '/components/about.php';

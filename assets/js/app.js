@@ -45,3 +45,17 @@ if (contactForm) {
         contactForm.reset();
     });
 }
+
+const orderForm = document.getElementById('orderForm');
+if (orderForm) {
+    orderForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const item = orderForm.order_item.value.trim();
+        const amount = orderForm.order_amount.value.trim();
+        const note = orderForm.order_note.value.trim();
+        if (!item || !amount) return;
+        const msg = `Order request:%0AItem: ${encodeURIComponent(item)}%0AAmount: ${encodeURIComponent(amount)}${note ? `%0ANote: ${encodeURIComponent(note)}` : ''}`;
+        const waUrl = `https://wa.me/?text=${msg}`;
+        window.open(waUrl, '_blank');
+    });
+}

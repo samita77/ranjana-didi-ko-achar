@@ -14,26 +14,28 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
 const navLinks = document.querySelector('.nav-links');
 const navOverlay = document.createElement('div');
-navOverlay.className = 'nav-overlay';
+navOverlay.className = 'fixed inset-0 bg-black/40 hidden z-40';
 document.body.appendChild(navOverlay);
 
 function toggleMenu() {
-    mobileNavToggle.classList.toggle('active');
-    navLinks.classList.toggle('active');
-    navOverlay.classList.toggle('active');
+    if (!navLinks) return;
+    navLinks.classList.toggle('hidden');
+    navOverlay.classList.toggle('hidden');
 }
 
 function closeMenu() {
-    mobileNavToggle.classList.remove('active');
-    navLinks.classList.remove('active');
-    navOverlay.classList.remove('active');
+    if (!navLinks) return;
+    navLinks.classList.add('hidden');
+    navOverlay.classList.add('hidden');
 }
 
-mobileNavToggle.addEventListener('click', toggleMenu);
+if (mobileNavToggle) mobileNavToggle.addEventListener('click', toggleMenu);
 navOverlay.addEventListener('click', closeMenu);
-navLinks.querySelectorAll('.nav-item a').forEach(link => {
-    link.addEventListener('click', closeMenu);
-});
+if (navLinks) {
+    navLinks.querySelectorAll('.nav-item a').forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+}
 
 const contactForm = document.querySelector('form[action="contact_handler.php"]');
 if (contactForm) {

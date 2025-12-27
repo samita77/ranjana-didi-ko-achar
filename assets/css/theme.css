@@ -12,6 +12,8 @@
     --radius: 12px;
     --shadow: 0 14px 48px rgba(17, 24, 39, 0.08);
     --shadow-soft: 0 10px 36px rgba(15, 23, 42, 0.06);
+    --shell-margin: 48px;
+    --nav-toggle-width: 26px;
 }
 
 *,
@@ -40,7 +42,8 @@ img {
 }
 
 .section-shell {
-    width: min(1100px, 100% - 48px);
+    width: calc(100% - var(--shell-margin));
+    max-width: 1100px;
     margin: 0 auto;
 }
 

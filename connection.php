@@ -23,7 +23,7 @@ class PDOMysqliResult
 
     public function fetch_assoc()
     {
-        return $this->rows[$this->index++] ?? null;
+        return $this->index < $this->num_rows ? $this->rows[$this->index++] : null;
     }
 
     public function fetch_all($mode = MYSQLI_ASSOC)
@@ -38,12 +38,14 @@ class PDOMysqliStatement
     private $pdo;
     private $types = '';
     private $bound = [];
+    private $sql;
     public $insert_id = null;
 
-    public function __construct(PDOStatement $stmt, PDO $pdo)
+    public function __construct(PDOStatement $stmt, PDO $pdo, string $sql)
     {
         $this->stmt = $stmt;
         $this->pdo = $pdo;
+        $this->sql = $sql;
     }
 
     public function bind_param($types, &...$vars)
@@ -67,13 +69,16 @@ class PDOMysqliStatement
     public function execute()
     {
         $params = [];
-        foreach ($this->bound as $idx => &$value) {
+        foreach ($this->bound as $idx => $value) {
             $type = $this->types[$idx] ?? 's';
             $params[] = $this->castValue($value, $type);
         }
 
         $this->stmt->execute($params);
-        $this->insert_id = $this->pdo->lastInsertId();
+        $this->insert_id = null;
+        if (stripos(ltrim($this->sql), 'insert') === 0) {
+            $this->insert_id = $this->pdo->lastInsertId();
+        }
 
         return true;
     }
@@ -113,7 +118,7 @@ class PDOMysqliConnection
 
     public function prepare($sql)
     {
-        return new PDOMysqliStatement($this->pdo->prepare($sql), $this->pdo);
+        return new PDOMysqliStatement($this->pdo->prepare($sql), $this->pdo, $sql);
     }
 
     public function query($sql)
@@ -124,7 +129,12 @@ class PDOMysqliConnection
 
     public function real_escape_string($value)
     {
-        $quoted = $this->pdo->quote($value);
+        // Note: This mirrors mysqli_real_escape_string behaviour closely enough for legacy calls,
+        // but prepared statements should be preferred for safety.
+        $quoted = $this->pdo->quote($value, PDO::PARAM_STR);
+        if ($quoted === false) {
+            throw new RuntimeException('Failed to escape value with PDO::quote');
+        }
         return substr($quoted, 1, -1);
     }
 
@@ -145,9 +155,12 @@ function build_database_connection()
 
     if ($driver === 'sqlite') {
         $path = getenv('SQLITE_PATH') ?: __DIR__ . '/storage/database.sqlite';
+        if (strpos($path, '..') !== false) {
+            throw new RuntimeException('SQLite path may not contain traversal segments.');
+        }
         $directory = dirname($path);
         if (!is_dir($directory)) {
-            mkdir($directory, 0775, true);
+            mkdir($directory, 0750, true);
         }
 
         $dsn = "sqlite:$path";
@@ -171,4 +184,14 @@ try {
     $conn = build_database_connection();
 } catch (Throwable $e) {
     die('Connection failed: ' . $e->getMessage());
+}
+
+if (!function_exists('mysqli_real_escape_string')) {
+    function mysqli_real_escape_string($conn, $value)
+    {
+        if (is_object($conn) && method_exists($conn, 'real_escape_string')) {
+            return $conn->real_escape_string($value);
+        }
+        throw new RuntimeException('Connection does not support real_escape_string');
+    }
 }

@@ -74,7 +74,7 @@ body {
 
 .hamburger {
     display: block;
-    width: 26px;
+    width: var(--nav-toggle-width);
     height: 3px;
     background: var(--text);
     position: relative;

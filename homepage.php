@@ -1,4 +1,10 @@
 
+<?php
+session_start();
+$storeName = htmlspecialchars(getenv('STORE_NAME') ?: 'Ranjana Didi ko Achar', ENT_QUOTES, 'UTF-8');
+$csrfToken = $_SESSION['csrf_token'] ?? bin2hex(random_bytes(16));
+$_SESSION['csrf_token'] = $csrfToken;
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +24,7 @@
         <header class="section-shell">
             <div class="logo">
                 <div class="pill">Single vendor</div>
-                <h1>Ranjana Didi ko Achar</h1>
+                <h1><?php echo $storeName; ?></h1>
             </div>
             <button class="mobile-nav-toggle">
                 <span class="hamburger"></span>
@@ -204,7 +210,8 @@
     <section class="contact" id="contact">
         <h2>Contact Us</h2>
         <div class="contact-content">       
-            <form action="process_form.php" method="POST">
+            <form action="contact_handler.php" method="POST">
+                <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($csrfToken, ENT_QUOTES, 'UTF-8'); ?>">
                 <fieldset>
                     <div class="form-group">
                         <label for="name">Name</label>
@@ -298,6 +305,18 @@
             });
         });
         
+    </script>
+    <script>
+        const contactForm = document.querySelector('form[action="contact_handler.php"]');
+        if (contactForm) {
+            contactForm.addEventListener('submit', async (event) => {
+                event.preventDefault();
+                const formData = new FormData(contactForm);
+                await fetch(contactForm.action, { method: 'POST', body: formData });
+                alert('Thanks for reaching out! Your message was received.');
+                contactForm.reset();
+            });
+        }
     </script>
 
     

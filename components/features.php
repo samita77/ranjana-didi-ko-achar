@@ -1,9 +1,9 @@
 <?php
 $featureCards = [
-    ['icon' => 'workflow.png', 'title' => 'Purchase Approval Workflow', 'copy' => 'Efficiently manage and approve purchase requests with ease.'],
-    ['icon' => 'analytics.png', 'title' => 'Detailed Analytics', 'copy' => 'Gain insights into sales, purchases, and inventory trends with in-depth analytics.'],
-    ['icon' => 'tracking.png', 'title' => 'Real-Time Tracking', 'copy' => 'Track inventory and purchases in real time.'],
-    ['icon' => 'reporting.png', 'title' => 'Custom Reports', 'copy' => 'Create and generate custom reports to analyze inventory performance and trends.'],
+    ['icon' => 'assets/img/workflow.png', 'title' => 'Purchase Approval Workflow', 'copy' => 'Efficiently manage and approve purchase requests with ease.'],
+    ['icon' => 'assets/img/analytics.png', 'title' => 'Detailed Analytics', 'copy' => 'Gain insights into sales, purchases, and inventory trends with in-depth analytics.'],
+    ['icon' => 'assets/img/tracking.png', 'title' => 'Real-Time Tracking', 'copy' => 'Track inventory and purchases in real time.'],
+    ['icon' => 'assets/img/reporting.png', 'title' => 'Custom Reports', 'copy' => 'Create and generate custom reports to analyze inventory performance and trends.'],
 ];
 ?>
 <section class="features" id="features">

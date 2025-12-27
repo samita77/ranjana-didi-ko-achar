@@ -102,7 +102,7 @@ if (isset($_POST['btnLogin'])) {
             </form>
         </div>
         <div class="right-section">
-            <img src="undraw_Fingerprint_login_re_t71l.png" alt="Illustration">
+            <img src="../assets/img/undraw_Fingerprint_login_re_t71l.png" alt="Illustration">
         </div>
     </div>
 

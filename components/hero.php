@@ -26,6 +26,6 @@
         </div>
     </div>
     <div class="hero-image surface">
-        <img src="undraw_Projections_re_ulc6.png" alt="Inventory Management Illustration">
+        <img src="assets/img/undraw_Projections_re_ulc6.png" alt="Inventory Management Illustration">
     </div>
 </section>

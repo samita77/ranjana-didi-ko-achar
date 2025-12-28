@@ -98,12 +98,11 @@ if (isset($_POST['btnLogin'])) {
                 </div>
                 <div class="form-group">
                     <input type="submit" class="btn" name="btnLogin" value="Login">
-                    <p class="login-link">Not registered yet?<a href="../registration.php">Create a new account</a></p>
                 </div>
             </form>
         </div>
         <div class="right-section">
-            <img src="undraw_Fingerprint_login_re_t71l.png" alt="Illustration">
+            <img src="../assets/img/undraw_Fingerprint_login_re_t71l.png" alt="Illustration">
         </div>
     </div>
 
